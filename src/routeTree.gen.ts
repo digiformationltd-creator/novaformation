@@ -61,14 +61,14 @@ const IndexRoute = IndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const UsaServicesIndexRoute = UsaServicesIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => UsaServicesRoute,
+  id: '/usa-services/',
+  path: '/usa-services/',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const UkServicesIndexRoute = UkServicesIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => UkServicesRoute,
+  id: '/uk-services/',
+  path: '/uk-services/',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const UkComplianceIndexRoute = UkComplianceIndexRouteImport.update({
   id: '/uk-compliance/',
@@ -82,14 +82,14 @@ const BanksPaymentSolutionsIndexRoute =
     getParentRoute: () => rootRouteImport,
   } as any)
 const UsaServicesSlugRoute = UsaServicesSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => UsaServicesRoute,
+  id: '/usa-services/$slug',
+  path: '/usa-services/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const UkServicesSlugRoute = UkServicesSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => UkServicesRoute,
+  id: '/uk-services/$slug',
+  path: '/uk-services/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const UkComplianceSlugRoute = UkComplianceSlugRouteImport.update({
   id: '/uk-compliance/$slug',
@@ -219,8 +219,12 @@ export interface RootRouteChildren {
   WebDevelopmentRoute: typeof WebDevelopmentRoute
   BanksPaymentSolutionsSlugRoute: typeof BanksPaymentSolutionsSlugRoute
   UkComplianceSlugRoute: typeof UkComplianceSlugRoute
+  UkServicesSlugRoute: typeof UkServicesSlugRoute
+  UsaServicesSlugRoute: typeof UsaServicesSlugRoute
   BanksPaymentSolutionsIndexRoute: typeof BanksPaymentSolutionsIndexRoute
   UkComplianceIndexRoute: typeof UkComplianceIndexRoute
+  UkServicesIndexRoute: typeof UkServicesIndexRoute
+  UsaServicesIndexRoute: typeof UsaServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -276,17 +280,17 @@ declare module '@tanstack/react-router' {
     }
     '/usa-services/': {
       id: '/usa-services/'
-      path: '/'
+      path: '/usa-services'
       fullPath: '/usa-services/'
       preLoaderRoute: typeof UsaServicesIndexRouteImport
-      parentRoute: typeof UsaServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/uk-services/': {
       id: '/uk-services/'
-      path: '/'
+      path: '/uk-services'
       fullPath: '/uk-services/'
       preLoaderRoute: typeof UkServicesIndexRouteImport
-      parentRoute: typeof UkServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/uk-compliance/': {
       id: '/uk-compliance/'
@@ -304,17 +308,17 @@ declare module '@tanstack/react-router' {
     }
     '/usa-services/$slug': {
       id: '/usa-services/$slug'
-      path: '/$slug'
+      path: '/usa-services/$slug'
       fullPath: '/usa-services/$slug'
       preLoaderRoute: typeof UsaServicesSlugRouteImport
-      parentRoute: typeof UsaServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/uk-services/$slug': {
       id: '/uk-services/$slug'
-      path: '/$slug'
+      path: '/uk-services/$slug'
       fullPath: '/uk-services/$slug'
       preLoaderRoute: typeof UkServicesSlugRouteImport
-      parentRoute: typeof UkServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/uk-compliance/$slug': {
       id: '/uk-compliance/$slug'
@@ -343,19 +347,13 @@ const rootRouteChildren: RootRouteChildren = {
   WebDevelopmentRoute: WebDevelopmentRoute,
   BanksPaymentSolutionsSlugRoute: BanksPaymentSolutionsSlugRoute,
   UkComplianceSlugRoute: UkComplianceSlugRoute,
+  UkServicesSlugRoute: UkServicesSlugRoute,
+  UsaServicesSlugRoute: UsaServicesSlugRoute,
   BanksPaymentSolutionsIndexRoute: BanksPaymentSolutionsIndexRoute,
   UkComplianceIndexRoute: UkComplianceIndexRoute,
+  UkServicesIndexRoute: UkServicesIndexRoute,
+  UsaServicesIndexRoute: UsaServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
