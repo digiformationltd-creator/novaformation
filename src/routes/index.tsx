@@ -13,10 +13,10 @@ import logo from "@/assets/nova-logo.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nova Formation Ltd — Setup Your UK Company from £160" },
-      { name: "description", content: "Premium UK & US company formation, banking and compliance. Register your UK LTD from £160 with Nova Formation Ltd." },
-      { property: "og:title", content: "Nova Formation Ltd — UK Company Formation" },
-      { property: "og:description", content: "Register your UK LTD from £160. Banking, compliance and web services for global founders." },
+      { title: "Nova Formation Ltd — UK & US Company Formation, Banking & Compliance" },
+      { name: "description", content: "Form your UK Limited Company or US LLC remotely. Banking, compliance, EIN, ITIN and global founder support — all in one place." },
+      { property: "og:title", content: "Nova Formation Ltd — UK & US Company Formation" },
+      { property: "og:description", content: "Launch your UK Ltd or US LLC in days. Banking, compliance and global founder support." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
     ],
@@ -98,26 +98,13 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.05]"
         >
-          <span className="block text-gold-gradient gold-shimmer">Setup Your</span>
-          <span className="block text-silver-gradient">UK Company</span>
+          <span className="block text-gold-gradient gold-shimmer">Launch Your</span>
+          <span className="block text-silver-gradient">Global Business</span>
           <span className="block text-xl sm:text-2xl mt-4 font-normal text-muted-foreground">
-            with <span className="text-gold-gradient font-semibold">Nova Formation Ltd</span>
+            UK Ltd · US LLC · Banking · Compliance — with{" "}
+            <span className="text-gold-gradient font-semibold">Nova Formation Ltd</span>
           </span>
         </motion.h1>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-10 inline-flex items-center"
-        >
-          <div className="relative px-10 py-4 rounded-2xl bg-silver-gradient gold-shimmer shadow-elegant">
-            <div className="absolute inset-0 rounded-2xl border-2 border-gold/40" />
-            <div className="relative text-primary-foreground font-display text-xl sm:text-2xl tracking-wider">
-              IN <span className="text-3xl sm:text-4xl font-bold">{BRAND.startingPrice}</span> ONLY
-            </div>
-          </div>
-        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -125,13 +112,13 @@ function Hero() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mt-10 flex flex-col sm:flex-row gap-3 justify-center"
         >
-          <Link
-            to="/pricing"
+          <a
+            href="#quick-start"
             className="group relative inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gold-gradient text-primary-foreground font-semibold shadow-gold hover:scale-[1.04] transition-transform"
           >
-            Register Your UK Company
+            Start Your Company
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </a>
           <Link
             to="/contact"
             className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-silver/30 text-foreground hover:bg-card transition-colors"
