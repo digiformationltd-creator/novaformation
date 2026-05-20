@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import {
   Building2, ShieldCheck, Landmark, Globe2, Code2, FileCheck2,
   ArrowRight, Sparkles, Star,
@@ -10,6 +10,57 @@ import { JurisdictionSelector } from "@/components/site/JurisdictionSelector";
 import { BRAND } from "@/lib/brand";
 import londonHero from "@/assets/hero-london.jpg";
 import logo from "@/assets/nova-logo.png";
+
+const ROTATING_HEADLINES = [
+  "UK Limited Company",
+  "US LLC",
+  "UK Business Bank Account",
+  "US Business Bank Account",
+  "Stripe & PayPal Account",
+  "EIN for Your US LLC",
+  "ITIN for Non-Residents",
+  "Companies House ID Verification",
+  "UTR & VAT Registration",
+  "Registered Office Address",
+  "US Registered Agent",
+  "BOI Report Filing",
+  "Confirmation Statement",
+  "Annual Accounts Filing",
+  "Director & Shareholder Updates",
+  "Wise & Payoneer Account",
+  "Airwallex & Tide Account",
+  "WorldFirst & Sunrate Account",
+  "Amazon Seller Account",
+  "Shopify & eBay Store",
+  "Premium Website & SEO",
+  "Branding & Logo Design",
+  "Payment Gateway Setup",
+  "Global Founder Compliance",
+];
+
+function RotatingHeadline() {
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setI((p) => (p + 1) % ROTATING_HEADLINES.length), 2200);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <span className="block relative h-[1.15em] overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={i}
+          initial={{ y: "100%", opacity: 0, filter: "blur(8px)" }}
+          animate={{ y: "0%", opacity: 1, filter: "blur(0px)" }}
+          exit={{ y: "-100%", opacity: 0, filter: "blur(8px)" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="block text-gold-gradient gold-shimmer"
+        >
+          {ROTATING_HEADLINES[i]}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+}
 
 export const Route = createFileRoute("/")({
   head: () => ({
