@@ -98,7 +98,7 @@ function Home() {
       <Services />
       <Packages />
       <WhyUs />
-      <Partners />
+      
       <Testimonials />
       <CTA />
     </SiteShell>
