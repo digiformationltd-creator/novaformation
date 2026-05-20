@@ -16,6 +16,10 @@ export type Service = {
   short: string;
   intro: string;
   highlights?: string[];
+  whoNeedsIt?: { title: string; subtitle?: string; roles: { name: string; desc?: string }[] };
+  requirements?: { title?: string; subtitle?: string; items: string[] };
+  howItWorks?: { title?: string; steps: string[] };
+  whatsIncluded?: { title?: string; items: string[] };
   packages: Package[];
 };
 
