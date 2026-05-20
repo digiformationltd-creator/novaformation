@@ -148,13 +148,14 @@ function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.05]"
+          className="text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.1]"
         >
-          <span className="block text-gold-gradient gold-shimmer">Launch Your</span>
-          <span className="block text-silver-gradient">Global Business</span>
-          <span className="block text-xl sm:text-2xl mt-4 font-normal text-muted-foreground">
-            UK Ltd · US LLC · Banking · Compliance — with{" "}
-            <span className="text-gold-gradient font-semibold">Nova Formation Ltd</span>
+          <span className="block text-silver-gradient">Set Up Your</span>
+          <RotatingHeadline />
+          <span className="block text-base sm:text-xl mt-5 font-normal text-muted-foreground max-w-2xl mx-auto">
+            One trusted partner for company formation, banking, compliance and growth — across the{" "}
+            <span className="text-gold-gradient font-semibold">UK, USA</span> and beyond, with{" "}
+            <span className="text-gold-gradient font-semibold">Nova Formation Ltd</span>.
           </span>
         </motion.h1>
 
