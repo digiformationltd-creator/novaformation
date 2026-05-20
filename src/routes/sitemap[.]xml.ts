@@ -11,6 +11,7 @@ export const Route = createFileRoute("/sitemap.xml")({
         const staticPaths = [
           "/", "/pricing", "/uk-services", "/uk-compliance", "/usa-services",
           "/banks-payment-solutions", "/web-development", "/about", "/faq", "/contact",
+          "/usa-services/us-llc-formation/choose-state",
         ];
         const dynamic = [
           ...ukServices.map((s) => `/uk-services/${s.slug}`),
