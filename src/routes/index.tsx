@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import {
   Building2, ShieldCheck, Landmark, Globe2, Code2, FileCheck2,
   ArrowRight, Sparkles, Star,
@@ -10,6 +10,57 @@ import { JurisdictionSelector } from "@/components/site/JurisdictionSelector";
 import { BRAND } from "@/lib/brand";
 import londonHero from "@/assets/hero-london.jpg";
 import logo from "@/assets/nova-logo.png";
+
+const ROTATING_HEADLINES = [
+  "UK Limited Company",
+  "US LLC",
+  "UK Business Bank Account",
+  "US Business Bank Account",
+  "Stripe & PayPal Account",
+  "EIN for Your US LLC",
+  "ITIN for Non-Residents",
+  "Companies House ID Verification",
+  "UTR & VAT Registration",
+  "Registered Office Address",
+  "US Registered Agent",
+  "BOI Report Filing",
+  "Confirmation Statement",
+  "Annual Accounts Filing",
+  "Director & Shareholder Updates",
+  "Wise & Payoneer Account",
+  "Airwallex & Tide Account",
+  "WorldFirst & Sunrate Account",
+  "Amazon Seller Account",
+  "Shopify & eBay Store",
+  "Premium Website & SEO",
+  "Branding & Logo Design",
+  "Payment Gateway Setup",
+  "Global Founder Compliance",
+];
+
+function RotatingHeadline() {
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setI((p) => (p + 1) % ROTATING_HEADLINES.length), 2200);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <span className="block relative h-[1.15em] overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={i}
+          initial={{ y: "100%", opacity: 0, filter: "blur(8px)" }}
+          animate={{ y: "0%", opacity: 1, filter: "blur(0px)" }}
+          exit={{ y: "-100%", opacity: 0, filter: "blur(8px)" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="block text-gold-gradient gold-shimmer"
+        >
+          {ROTATING_HEADLINES[i]}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+}
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -97,13 +148,14 @@ function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.05]"
+          className="text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.1]"
         >
-          <span className="block text-gold-gradient gold-shimmer">Launch Your</span>
-          <span className="block text-silver-gradient">Global Business</span>
-          <span className="block text-xl sm:text-2xl mt-4 font-normal text-muted-foreground">
-            UK Ltd · US LLC · Banking · Compliance — with{" "}
-            <span className="text-gold-gradient font-semibold">Nova Formation Ltd</span>
+          <span className="block text-silver-gradient">Set Up Your</span>
+          <RotatingHeadline />
+          <span className="block text-base sm:text-xl mt-5 font-normal text-muted-foreground max-w-2xl mx-auto">
+            One trusted partner for company formation, banking, compliance and growth — across the{" "}
+            <span className="text-gold-gradient font-semibold">UK, USA</span> and beyond, with{" "}
+            <span className="text-gold-gradient font-semibold">Nova Formation Ltd</span>.
           </span>
         </motion.h1>
 
