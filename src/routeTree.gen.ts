@@ -10,28 +10,24 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WebDevelopmentRouteImport } from './routes/web-development'
-import { Route as UsaServicesRouteImport } from './routes/usa-services'
-import { Route as UkServicesRouteImport } from './routes/uk-services'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as BankingRouteImport } from './routes/banking'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as UsaServicesIndexRouteImport } from './routes/usa-services.index'
+import { Route as UkServicesIndexRouteImport } from './routes/uk-services.index'
+import { Route as UkComplianceIndexRouteImport } from './routes/uk-compliance.index'
+import { Route as BanksPaymentSolutionsIndexRouteImport } from './routes/banks-payment-solutions.index'
+import { Route as UsaServicesSlugRouteImport } from './routes/usa-services.$slug'
+import { Route as UkServicesSlugRouteImport } from './routes/uk-services.$slug'
+import { Route as UkComplianceSlugRouteImport } from './routes/uk-compliance.$slug'
+import { Route as BanksPaymentSolutionsSlugRouteImport } from './routes/banks-payment-solutions.$slug'
 
 const WebDevelopmentRoute = WebDevelopmentRouteImport.update({
   id: '/web-development',
   path: '/web-development',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const UsaServicesRoute = UsaServicesRouteImport.update({
-  id: '/usa-services',
-  path: '/usa-services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const UkServicesRoute = UkServicesRouteImport.update({
-  id: '/uk-services',
-  path: '/uk-services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -44,14 +40,14 @@ const PricingRoute = PricingRouteImport.update({
   path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BankingRoute = BankingRouteImport.update({
-  id: '/banking',
-  path: '/banking',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -64,87 +60,171 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UsaServicesIndexRoute = UsaServicesIndexRouteImport.update({
+  id: '/usa-services/',
+  path: '/usa-services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UkServicesIndexRoute = UkServicesIndexRouteImport.update({
+  id: '/uk-services/',
+  path: '/uk-services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UkComplianceIndexRoute = UkComplianceIndexRouteImport.update({
+  id: '/uk-compliance/',
+  path: '/uk-compliance/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BanksPaymentSolutionsIndexRoute =
+  BanksPaymentSolutionsIndexRouteImport.update({
+    id: '/banks-payment-solutions/',
+    path: '/banks-payment-solutions/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const UsaServicesSlugRoute = UsaServicesSlugRouteImport.update({
+  id: '/usa-services/$slug',
+  path: '/usa-services/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UkServicesSlugRoute = UkServicesSlugRouteImport.update({
+  id: '/uk-services/$slug',
+  path: '/uk-services/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UkComplianceSlugRoute = UkComplianceSlugRouteImport.update({
+  id: '/uk-compliance/$slug',
+  path: '/uk-compliance/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BanksPaymentSolutionsSlugRoute =
+  BanksPaymentSolutionsSlugRouteImport.update({
+    id: '/banks-payment-solutions/$slug',
+    path: '/banks-payment-solutions/$slug',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/banking': typeof BankingRoute
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/pricing': typeof PricingRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/uk-services': typeof UkServicesRoute
-  '/usa-services': typeof UsaServicesRoute
   '/web-development': typeof WebDevelopmentRoute
+  '/banks-payment-solutions/$slug': typeof BanksPaymentSolutionsSlugRoute
+  '/uk-compliance/$slug': typeof UkComplianceSlugRoute
+  '/uk-services/$slug': typeof UkServicesSlugRoute
+  '/usa-services/$slug': typeof UsaServicesSlugRoute
+  '/banks-payment-solutions/': typeof BanksPaymentSolutionsIndexRoute
+  '/uk-compliance/': typeof UkComplianceIndexRoute
+  '/uk-services/': typeof UkServicesIndexRoute
+  '/usa-services/': typeof UsaServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/banking': typeof BankingRoute
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/pricing': typeof PricingRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/uk-services': typeof UkServicesRoute
-  '/usa-services': typeof UsaServicesRoute
   '/web-development': typeof WebDevelopmentRoute
+  '/banks-payment-solutions/$slug': typeof BanksPaymentSolutionsSlugRoute
+  '/uk-compliance/$slug': typeof UkComplianceSlugRoute
+  '/uk-services/$slug': typeof UkServicesSlugRoute
+  '/usa-services/$slug': typeof UsaServicesSlugRoute
+  '/banks-payment-solutions': typeof BanksPaymentSolutionsIndexRoute
+  '/uk-compliance': typeof UkComplianceIndexRoute
+  '/uk-services': typeof UkServicesIndexRoute
+  '/usa-services': typeof UsaServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/banking': typeof BankingRoute
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/pricing': typeof PricingRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/uk-services': typeof UkServicesRoute
-  '/usa-services': typeof UsaServicesRoute
   '/web-development': typeof WebDevelopmentRoute
+  '/banks-payment-solutions/$slug': typeof BanksPaymentSolutionsSlugRoute
+  '/uk-compliance/$slug': typeof UkComplianceSlugRoute
+  '/uk-services/$slug': typeof UkServicesSlugRoute
+  '/usa-services/$slug': typeof UsaServicesSlugRoute
+  '/banks-payment-solutions/': typeof BanksPaymentSolutionsIndexRoute
+  '/uk-compliance/': typeof UkComplianceIndexRoute
+  '/uk-services/': typeof UkServicesIndexRoute
+  '/usa-services/': typeof UsaServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
-    | '/banking'
     | '/contact'
+    | '/faq'
     | '/pricing'
     | '/sitemap.xml'
-    | '/uk-services'
-    | '/usa-services'
     | '/web-development'
+    | '/banks-payment-solutions/$slug'
+    | '/uk-compliance/$slug'
+    | '/uk-services/$slug'
+    | '/usa-services/$slug'
+    | '/banks-payment-solutions/'
+    | '/uk-compliance/'
+    | '/uk-services/'
+    | '/usa-services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
-    | '/banking'
     | '/contact'
+    | '/faq'
     | '/pricing'
     | '/sitemap.xml'
+    | '/web-development'
+    | '/banks-payment-solutions/$slug'
+    | '/uk-compliance/$slug'
+    | '/uk-services/$slug'
+    | '/usa-services/$slug'
+    | '/banks-payment-solutions'
+    | '/uk-compliance'
     | '/uk-services'
     | '/usa-services'
-    | '/web-development'
   id:
     | '__root__'
     | '/'
     | '/about'
-    | '/banking'
     | '/contact'
+    | '/faq'
     | '/pricing'
     | '/sitemap.xml'
-    | '/uk-services'
-    | '/usa-services'
     | '/web-development'
+    | '/banks-payment-solutions/$slug'
+    | '/uk-compliance/$slug'
+    | '/uk-services/$slug'
+    | '/usa-services/$slug'
+    | '/banks-payment-solutions/'
+    | '/uk-compliance/'
+    | '/uk-services/'
+    | '/usa-services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  BankingRoute: typeof BankingRoute
   ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
   PricingRoute: typeof PricingRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  UkServicesRoute: typeof UkServicesRoute
-  UsaServicesRoute: typeof UsaServicesRoute
   WebDevelopmentRoute: typeof WebDevelopmentRoute
+  BanksPaymentSolutionsSlugRoute: typeof BanksPaymentSolutionsSlugRoute
+  UkComplianceSlugRoute: typeof UkComplianceSlugRoute
+  UkServicesSlugRoute: typeof UkServicesSlugRoute
+  UsaServicesSlugRoute: typeof UsaServicesSlugRoute
+  BanksPaymentSolutionsIndexRoute: typeof BanksPaymentSolutionsIndexRoute
+  UkComplianceIndexRoute: typeof UkComplianceIndexRoute
+  UkServicesIndexRoute: typeof UkServicesIndexRoute
+  UsaServicesIndexRoute: typeof UsaServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -154,20 +234,6 @@ declare module '@tanstack/react-router' {
       path: '/web-development'
       fullPath: '/web-development'
       preLoaderRoute: typeof WebDevelopmentRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/usa-services': {
-      id: '/usa-services'
-      path: '/usa-services'
-      fullPath: '/usa-services'
-      preLoaderRoute: typeof UsaServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/uk-services': {
-      id: '/uk-services'
-      path: '/uk-services'
-      fullPath: '/uk-services'
-      preLoaderRoute: typeof UkServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -184,18 +250,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/banking': {
-      id: '/banking'
-      path: '/banking'
-      fullPath: '/banking'
-      preLoaderRoute: typeof BankingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -212,19 +278,81 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/usa-services/': {
+      id: '/usa-services/'
+      path: '/usa-services'
+      fullPath: '/usa-services/'
+      preLoaderRoute: typeof UsaServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/uk-services/': {
+      id: '/uk-services/'
+      path: '/uk-services'
+      fullPath: '/uk-services/'
+      preLoaderRoute: typeof UkServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/uk-compliance/': {
+      id: '/uk-compliance/'
+      path: '/uk-compliance'
+      fullPath: '/uk-compliance/'
+      preLoaderRoute: typeof UkComplianceIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/banks-payment-solutions/': {
+      id: '/banks-payment-solutions/'
+      path: '/banks-payment-solutions'
+      fullPath: '/banks-payment-solutions/'
+      preLoaderRoute: typeof BanksPaymentSolutionsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/usa-services/$slug': {
+      id: '/usa-services/$slug'
+      path: '/usa-services/$slug'
+      fullPath: '/usa-services/$slug'
+      preLoaderRoute: typeof UsaServicesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/uk-services/$slug': {
+      id: '/uk-services/$slug'
+      path: '/uk-services/$slug'
+      fullPath: '/uk-services/$slug'
+      preLoaderRoute: typeof UkServicesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/uk-compliance/$slug': {
+      id: '/uk-compliance/$slug'
+      path: '/uk-compliance/$slug'
+      fullPath: '/uk-compliance/$slug'
+      preLoaderRoute: typeof UkComplianceSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/banks-payment-solutions/$slug': {
+      id: '/banks-payment-solutions/$slug'
+      path: '/banks-payment-solutions/$slug'
+      fullPath: '/banks-payment-solutions/$slug'
+      preLoaderRoute: typeof BanksPaymentSolutionsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  BankingRoute: BankingRoute,
   ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
   PricingRoute: PricingRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  UkServicesRoute: UkServicesRoute,
-  UsaServicesRoute: UsaServicesRoute,
   WebDevelopmentRoute: WebDevelopmentRoute,
+  BanksPaymentSolutionsSlugRoute: BanksPaymentSolutionsSlugRoute,
+  UkComplianceSlugRoute: UkComplianceSlugRoute,
+  UkServicesSlugRoute: UkServicesSlugRoute,
+  UsaServicesSlugRoute: UsaServicesSlugRoute,
+  BanksPaymentSolutionsIndexRoute: BanksPaymentSolutionsIndexRoute,
+  UkComplianceIndexRoute: UkComplianceIndexRoute,
+  UkServicesIndexRoute: UkServicesIndexRoute,
+  UsaServicesIndexRoute: UsaServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

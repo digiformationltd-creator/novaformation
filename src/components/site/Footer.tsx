@@ -25,7 +25,9 @@ export function Footer() {
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li><Link to="/uk-services" className="hover:text-foreground">UK LTD Formation</Link></li>
             <li><Link to="/usa-services" className="hover:text-foreground">US LLC Formation</Link></li>
-            <li><Link to="/banking" className="hover:text-foreground">Business Banking</Link></li>
+            <li><Link to="/banks-payment-solutions" className="hover:text-foreground">Business Banking</Link></li>
+            <li><Link to="/uk-compliance" className="hover:text-foreground">UK Compliance</Link></li>
+            <li><Link to="/faq" className="hover:text-foreground">FAQ</Link></li>
             <li><Link to="/web-development" className="hover:text-foreground">Web Development</Link></li>
           </ul>
         </div>
