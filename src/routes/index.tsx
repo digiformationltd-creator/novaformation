@@ -145,13 +145,17 @@ function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.1]"
+          className="font-bold leading-[1.15]"
         >
-          <span className="block text-silver-gradient">Set Up Your</span>
-          <RotatingHeadline />
-          <span className="block text-base sm:text-xl mt-5 font-normal text-muted-foreground max-w-2xl mx-auto">
-            One trusted partner for company formation, banking, compliance and growth — across the{" "}
-            <span className="text-gold-gradient font-semibold">UK, USA</span> and beyond, with{" "}
+          <span className="block text-3xl sm:text-5xl lg:text-6xl text-silver-gradient mb-3">
+            We Help You
+          </span>
+          <span className="block text-2xl sm:text-4xl lg:text-5xl">
+            <RotatingHeadline />
+          </span>
+          <span className="block text-sm sm:text-lg mt-6 font-normal text-muted-foreground max-w-2xl mx-auto">
+            Your trusted partner for company formation, banking, compliance and growth across the{" "}
+            <span className="text-gold-gradient font-semibold">UK, USA</span> and beyond — with{" "}
             <span className="text-gold-gradient font-semibold">Nova Formation Ltd</span>.
           </span>
         </motion.h1>
