@@ -9,7 +9,7 @@ import { SiteShell } from "@/components/site/SiteShell";
 import { JurisdictionSelector } from "@/components/site/JurisdictionSelector";
 import { BRAND } from "@/lib/brand";
 import londonHero from "@/assets/hero-london.jpg";
-import logo from "@/assets/nova-logo.png";
+
 
 const ROTATING_HEADLINES = [
   "UK Limited Company",
