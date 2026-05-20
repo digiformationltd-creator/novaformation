@@ -16,6 +16,10 @@ export type Service = {
   short: string;
   intro: string;
   highlights?: string[];
+  whoNeedsIt?: { title: string; subtitle?: string; roles: { name: string; desc?: string }[] };
+  requirements?: { title?: string; subtitle?: string; items: string[] };
+  howItWorks?: { title?: string; steps: string[] };
+  whatsIncluded?: { title?: string; items: string[] };
   packages: Package[];
 };
 
@@ -24,23 +28,34 @@ export const ukServices: Service[] = [
   {
     slug: "uk-ltd-formation",
     category: "uk-services",
-    title: "Register Your UK Limited Company",
+    title: "Register Your UK Limited Company in Days",
     short: "UK LTD Company Formation",
     intro:
-      "Form a fully compliant UK Limited Company with Companies House — handled remotely by our specialists. Get your incorporation pack, UTR, authentication code and address services in one place.",
+      "Fast, compliant and fully supported UK LTD registration with UTR, ID verification and registered office services — handled remotely by Nova Formation specialists.",
     highlights: [
       "Companies House incorporation",
       "Digital & printed company documents",
       "UTR registration with HMRC",
-      "Director ID verification (DIATF)",
+      "Company authentication code",
       "Registered office & director service address",
+      "ID verification (DIATF)",
       "Ongoing client support",
     ],
+    whatsIncluded: {
+      title: "Register your UK Limited Company with everything covered",
+      items: [
+        "Registered with Companies House",
+        "300+ UK Companies Formed",
+        "98% Success Rate",
+        "Secure Document Handling",
+        "Dedicated Support Team",
+      ],
+    },
     packages: [
       {
         name: "Starter",
         price: "£140",
-        note: "3–5 Business Days",
+        note: "Processing: 3–5 Business Days",
         features: [
           "UK LTD (Company) Registration",
           "Companies House Incorporation Fee Included",
@@ -49,6 +64,7 @@ export const ukServices: Service[] = [
           "Digital Copy of All Documents (PDF)",
           "Digital Shares Certificate",
           "ID Verification Included",
+          "Client Portal Access (document uploads & status updates)",
           "12/6 Phone & WhatsApp Support",
         ],
       },
@@ -66,6 +82,7 @@ export const ukServices: Service[] = [
           "UTR Number",
           "Digital Shares Certificate",
           "ID Verification Included",
+          "Client Portal Access (document uploads & status updates)",
         ],
       },
       {
@@ -82,6 +99,7 @@ export const ukServices: Service[] = [
           "Digital Shares Certificate",
           "ID Verification Included",
           "Director Service Address",
+          "Client Portal Access (document uploads & status updates)",
         ],
       },
       {
@@ -98,6 +116,7 @@ export const ukServices: Service[] = [
           "Digital Shares Certificate",
           "ID Verification Included",
           "Director Service Address",
+          "Client Portal Access (document uploads & status updates)",
         ],
       },
     ],
@@ -105,17 +124,49 @@ export const ukServices: Service[] = [
   {
     slug: "ltd-id-verification",
     category: "uk-services",
-    title: "Companies House ID Verification",
+    title: "LTD ID Verification",
     short: "LTD ID Verification",
     intro:
-      "DIATF-compliant identity verification for directors, PSCs and shareholders. Secure remote process to keep your UK company in good standing with Companies House.",
-    highlights: ["Director & PSC verification", "Fully digital workflow", "Secure document handling"],
+      "Ready to verify your identity and keep your UK LTD compliant? Begin your secure Companies House identity check in minutes — one-time fee, worldwide officers accepted.",
+    whoNeedsIt: {
+      title: "Verification is mandatory for these roles",
+      subtitle:
+        "If you hold any of these positions in a UK Limited Company, identity verification with Companies House is now required.",
+      roles: [
+        { name: "Company Director" },
+        { name: "Person with Significant Control (PSC)" },
+        { name: "Company Secretary" },
+        { name: "Shareholder" },
+      ],
+    },
+    whatsIncluded: {
+      title: "What this service covers",
+      items: [
+        "Secure digital identity verification",
+        "Fast document review",
+        "For UK & non-UK officers",
+        "Accepted for Companies House",
+        "Compliance-ready processing",
+      ],
+    },
+    requirements: {
+      title: "ID Verification Requirements",
+      subtitle: "Please prepare the following documents before starting your verification for fast, smooth processing with Companies House.",
+      items: [
+        "ID Card / Passport Picture",
+        "Live Selfie",
+        "Home Address",
+        "Residential Bank Statement",
+        "Email Address",
+      ],
+    },
     packages: [
       {
         name: "ID Verification",
-        price: "£25",
+        price: "£20",
+        note: "One-time fee · Worldwide officers accepted",
         features: [
-          "Per individual verification",
+          "Secure digital identity verification",
           "Companies House DIATF compliant",
           "Digital verification certificate",
           "Fast turnaround",
@@ -127,30 +178,41 @@ export const ukServices: Service[] = [
   {
     slug: "registered-office-address",
     category: "uk-services",
-    title: "UK Address Services",
+    title: "Registered Office Address — UK LTD",
     short: "Registered Office Address",
     intro:
-      "Professional UK address solutions to keep your company registered and your director details private. Choose the address type that fits your business.",
+      "Use our secure and official UK Registered Office Addresses for your company registration and compliance. Receive all government correspondence digitally or via post — and maintain a professional UK business presence.",
+    whoNeedsIt: {
+      title: "Essential for every UK business",
+      roles: [
+        { name: "Directors", desc: "Receive official government mail" },
+        { name: "Company Secretaries (PCS)", desc: "Maintain compliance with Companies House" },
+        { name: "Shareholders", desc: "Official documentation & correspondence" },
+        { name: "Small & Medium Businesses", desc: "Establish a professional UK business presence" },
+      ],
+    },
     packages: [
       {
         name: "Registered Office Address",
         price: "£40",
-        note: "1 Year Contract",
+        note: "per year · 1 Year Contract",
         features: [
           "Unique Office Number with Address",
-          "Use for registration of 1 Company/Business",
+          "Use address for registration of 1 Company/Business",
           "Receive all mail from UK government bodies",
           "Receive Post (up to 10 items/month)",
           "Notify via email when mail received",
           "Proof of Address provided",
           "Scan & Email Your Mail",
           "Forward Your Mail (Paid)",
+          "Client Portal Access (mail & document tracking)",
+          "1 Year Contract (Billed Annually)",
         ],
       },
       {
         name: "Business Service Address",
         price: "£60",
-        note: "1 Year Contract",
+        note: "per year · Most Popular",
         popular: true,
         features: [
           "Unique Office Number with Address",
@@ -161,12 +223,14 @@ export const ukServices: Service[] = [
           "Proof of Address provided",
           "Scan & Email Your Mail",
           "Forward Your Mail (Paid)",
+          "Client Portal Access (mail & document tracking)",
+          "1 Year Contract (Billed Annually)",
         ],
       },
       {
         name: "Director Service Address",
         price: "£20",
-        note: "1 Year Contract",
+        note: "per year · 1 Year Contract",
         features: [
           "Unique Office Number with Address",
           "Use address for 1 Director",
@@ -175,6 +239,45 @@ export const ukServices: Service[] = [
           "Notify via email when mail received",
           "Scan & Email Your Mail",
           "Forward Your Mail (Paid)",
+          "Client Portal Access (mail & document tracking)",
+          "1 Year Contract (Billed Annually)",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "company-annual-filing",
+    category: "uk-services",
+    title: "Confirmation Statement Filing",
+    short: "Confirmation Statement Filing",
+    intro:
+      "Professional confirmation statement filing delivered with speed, transparency and full compliance. Trusted by 300+ entrepreneurs across the UK, USA and beyond.",
+    whatsIncluded: {
+      title: "A complete service, handled for you",
+      items: [
+        "Fully managed end-to-end process",
+        "Transparent fixed pricing — no hidden fees",
+        "Dedicated specialist assigned to your case",
+        "Status updates at every stage",
+      ],
+    },
+    howItWorks: {
+      steps: [
+        "Book a free consultation",
+        "We collect your details securely",
+        "Our team handles every step",
+        "You receive your documents",
+      ],
+    },
+    packages: [
+      {
+        name: "Confirmation Statement",
+        price: "£80",
+        features: [
+          "Prepare your annual confirmation statement",
+          "File with Companies House (£50 fee included)",
+          "Director identity verification details collected",
+          "Avoid strike-off and compliance issues",
         ],
       },
     ],
@@ -183,9 +286,26 @@ export const ukServices: Service[] = [
     slug: "utr-number",
     category: "uk-services",
     title: "Get UTR Number (HMRC)",
-    short: "UTR Number Service",
+    short: "Get UTR Number (HMRC)",
     intro:
-      "We register your UK company with HMRC and obtain your Unique Taxpayer Reference (UTR) so you can file Corporation Tax and trade legally.",
+      "Professional UTR number registration delivered with speed, transparency and full compliance. Trusted by 300+ entrepreneurs across the UK, USA and beyond.",
+    whatsIncluded: {
+      title: "A complete service, handled for you",
+      items: [
+        "Fully managed end-to-end process",
+        "Transparent fixed pricing — no hidden fees",
+        "Dedicated specialist assigned to your case",
+        "Status updates at every stage",
+      ],
+    },
+    howItWorks: {
+      steps: [
+        "Book a free consultation",
+        "We collect your details securely",
+        "Our team handles every step",
+        "You receive your documents",
+      ],
+    },
     packages: [
       {
         name: "UTR Registration",
@@ -200,35 +320,33 @@ export const ukServices: Service[] = [
     ],
   },
   {
-    slug: "utr-codes",
-    category: "uk-services",
-    title: "UTR Codes",
-    short: "UTR Codes",
-    intro: "Personal and Company UTR registration with HMRC, handled remotely for non-resident directors.",
-    packages: [
-      {
-        name: "Personal UTR",
-        price: "£30",
-        features: ["HMRC self-assessment registration", "Personal UTR issued", "Digital delivery"],
-      },
-      {
-        name: "Company UTR",
-        price: "£30",
-        features: ["HMRC company registration", "Corporation Tax UTR", "Digital delivery"],
-      },
-    ],
-  },
-  {
     slug: "auth-code",
     category: "uk-services",
     title: "Companies House Authentication Code",
-    short: "Authentication Code",
+    short: "Companies House Authentication Code",
     intro:
-      "Lost or never received your Companies House authentication code? We help you request, recover or reissue your code so you can manage filings online.",
+      "Professional Companies House authentication code service delivered with speed, transparency and full compliance. Trusted by 300+ entrepreneurs across the UK, USA and beyond.",
+    whatsIncluded: {
+      title: "A complete service, handled for you",
+      items: [
+        "Fully managed end-to-end process",
+        "Transparent fixed pricing — no hidden fees",
+        "Dedicated specialist assigned to your case",
+        "Status updates at every stage",
+      ],
+    },
+    howItWorks: {
+      steps: [
+        "Book a free consultation",
+        "We collect your details securely",
+        "Our team handles every step",
+        "You receive your documents",
+      ],
+    },
     packages: [
       {
         name: "Auth Code Service",
-        price: "£20",
+        price: "£10",
         features: [
           "Request or reissue authentication code",
           "Postal delivery to registered office",
@@ -241,12 +359,30 @@ export const ukServices: Service[] = [
     slug: "activation-code",
     category: "uk-services",
     title: "Activation Code Service",
-    short: "Activation Code",
-    intro: "HMRC online activation code service — register for online services and activate your account.",
+    short: "Activation Code Service",
+    intro:
+      "Professional activation code service delivered with speed, transparency and full compliance. Trusted by 300+ entrepreneurs across the UK, USA and beyond.",
+    whatsIncluded: {
+      title: "A complete service, handled for you",
+      items: [
+        "Fully managed end-to-end process",
+        "Transparent fixed pricing — no hidden fees",
+        "Dedicated specialist assigned to your case",
+        "Status updates at every stage",
+      ],
+    },
+    howItWorks: {
+      steps: [
+        "Book a free consultation",
+        "We collect your details securely",
+        "Our team handles every step",
+        "You receive your documents",
+      ],
+    },
     packages: [
       {
         name: "Activation Code",
-        price: "£20",
+        price: "£10",
         features: ["HMRC online account registration", "Activation code request", "Setup support"],
       },
     ],
@@ -255,13 +391,30 @@ export const ukServices: Service[] = [
     slug: "uk-vat-registration",
     category: "uk-services",
     title: "UK VAT Registration & Submission",
-    short: "UK VAT Registration",
+    short: "UK VAT Registration & Submission",
     intro:
-      "VAT registration with HMRC for UK and non-resident businesses. Ongoing VAT return submission available.",
+      "Professional UK VAT registration and submission delivered with speed, transparency and full compliance. Trusted by 300+ entrepreneurs across the UK, USA and beyond.",
+    whatsIncluded: {
+      title: "A complete service, handled for you",
+      items: [
+        "Fully managed end-to-end process",
+        "Transparent fixed pricing — no hidden fees",
+        "Dedicated specialist assigned to your case",
+        "Status updates at every stage",
+      ],
+    },
+    howItWorks: {
+      steps: [
+        "Book a free consultation",
+        "We collect your details securely",
+        "Our team handles every step",
+        "You receive your documents",
+      ],
+    },
     packages: [
       {
         name: "VAT Registration",
-        price: "£80",
+        price: "£100",
         features: [
           "VAT number issued by HMRC",
           "Full application handled by us",
@@ -271,31 +424,12 @@ export const ukServices: Service[] = [
       },
       {
         name: "VAT Return Submission",
-        price: "£60",
+        price: "£80",
         note: "per return",
         features: [
           "Quarterly VAT return preparation",
           "MTD-compliant submission",
           "Review & advice on input/output VAT",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "company-annual-filing",
-    category: "uk-services",
-    title: "Confirmation Statement Filing",
-    short: "Annual Filing",
-    intro: "On-time annual confirmation statement filing with Companies House to keep your company in good standing.",
-    packages: [
-      {
-        name: "Confirmation Statement",
-        price: "£80",
-        features: [
-          "Prepare your annual confirmation statement",
-          "File with Companies House (£50 fee included)",
-          "Director identity verification details collected",
-          "Avoid strike-off and compliance issues",
         ],
       },
     ],
