@@ -160,8 +160,8 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-bold leading-[1.15]"
         >
-          <span className="block text-3xl sm:text-5xl lg:text-6xl text-silver-gradient mb-4">
-            Your Global Business,
+          <span className="block text-2xl sm:text-4xl lg:text-5xl text-silver-gradient mb-5">
+            With Nova Formation, you can
           </span>
           <span className="block text-xl sm:text-3xl lg:text-4xl font-semibold">
             <TypewriterHeadline />
