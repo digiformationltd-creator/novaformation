@@ -135,14 +135,11 @@ function Hero() {
         </motion.div>
 
         <motion.div
-          initial={{ scale: 0, rotate: -180 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ duration: 1, type: "spring" }}
-          className="mx-auto w-24 h-24 mb-6 relative"
-        >
-          <div className="absolute inset-0 rounded-full bg-gold/30 blur-2xl animate-pulse" />
-          <img src={logo} alt="" width={96} height={96} className="relative rounded-full glow-gold" />
-        </motion.div>
+          initial={{ opacity: 0, scaleX: 0 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+          className="mx-auto mb-8 h-px w-24 bg-gold-gradient origin-center"
+        />
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
