@@ -228,13 +228,13 @@ function Stats() {
 }
 
 const services = [
-  { icon: Building2, tag: "UK Formation", title: "UK LTD Company Formation", desc: "Register a UK Limited Company with Companies House. Fast, compliant, fully remote." },
-  { icon: ShieldCheck, tag: "UK Compliance", title: "LTD ID Verification", desc: "Companies House identity verification for directors and PSCs — DIATF compliant." },
-  { icon: FileCheck2, tag: "UK Compliance", title: "Annual Filing & Returns", desc: "Confirmation statements, annual accounts and statutory returns filed on time." },
-  { icon: Globe2, tag: "USA Formation", title: "US LLC Formation", desc: "Register a US LLC remotely. Access PayPal, Stripe, Amazon and the US market." },
-  { icon: Landmark, tag: "Banking", title: "Banking & Payments", desc: "Tide, Wise, Airwallex, Payoneer, Stripe, PayPal, WorldFirst and more." },
-  { icon: Code2, tag: "Technology", title: "Web Development", desc: "Premium websites, landing pages and e-commerce for your global business." },
-];
+  { icon: Building2, tag: "UK Formation", title: "UK LTD Company Formation", desc: "Register a UK Limited Company with Companies House. Fast, compliant, fully remote.", to: "/uk-services/$slug", params: { slug: "uk-ltd-formation" } },
+  { icon: ShieldCheck, tag: "UK Compliance", title: "LTD ID Verification", desc: "Companies House identity verification for directors and PSCs — DIATF compliant.", to: "/uk-services/$slug", params: { slug: "ltd-id-verification" } },
+  { icon: FileCheck2, tag: "UK Compliance", title: "Annual Filing & Returns", desc: "Confirmation statements, annual accounts and statutory returns filed on time.", to: "/uk-compliance" as const, params: undefined },
+  { icon: Globe2, tag: "USA Formation", title: "US LLC Formation", desc: "Register a US LLC remotely. Access PayPal, Stripe, Amazon and the US market.", to: "/usa-services/$slug", params: { slug: "us-llc-formation" } },
+  { icon: Landmark, tag: "Banking", title: "Banking & Payments", desc: "Tide, Wise, Airwallex, Payoneer, Stripe, PayPal, WorldFirst and more.", to: "/banks-payment-solutions" as const, params: undefined },
+  { icon: Code2, tag: "Technology", title: "Web Development", desc: "Premium websites, landing pages and e-commerce for your global business.", to: "/web-development" as const, params: undefined },
+] as const;
 
 function Services() {
   return (
@@ -250,14 +250,22 @@ function Services() {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
               whileHover={{ y: -6 }}
-              className="group relative rounded-2xl gold-border p-6 shadow-elegant hover:shadow-gold transition-shadow"
             >
-              <div className="w-12 h-12 rounded-xl bg-gold-gradient flex items-center justify-center mb-5 shadow-gold">
-                <s.icon size={22} className="text-primary-foreground" />
-              </div>
-              <div className="text-xs uppercase tracking-wider text-gold mb-2">{s.tag}</div>
-              <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
-              <p className="text-sm text-muted-foreground">{s.desc}</p>
+              <Link
+                to={s.to}
+                params={s.params as never}
+                className="group relative block h-full rounded-2xl gold-border p-6 shadow-elegant hover:shadow-gold transition-shadow"
+              >
+                <div className="w-12 h-12 rounded-xl bg-gold-gradient flex items-center justify-center mb-5 shadow-gold">
+                  <s.icon size={22} className="text-primary-foreground" />
+                </div>
+                <div className="text-xs uppercase tracking-wider text-gold mb-2">{s.tag}</div>
+                <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
+                <p className="text-sm text-muted-foreground">{s.desc}</p>
+                <div className="mt-4 inline-flex items-center gap-1 text-sm text-gold group-hover:gap-2 transition-all">
+                  Explore <ArrowRight size={14} />
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>
