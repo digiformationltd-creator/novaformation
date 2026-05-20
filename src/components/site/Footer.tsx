@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, Phone, Facebook, MessageCircle } from "lucide-react";
+import { Mail, Phone, MessageCircle, Globe } from "lucide-react";
 import logo from "@/assets/nova-logo.png";
 import { BRAND } from "@/lib/brand";
 
@@ -55,7 +55,7 @@ export function Footer() {
               <a href={BRAND.whatsapp} target="_blank" rel="noopener" className="hover:text-foreground">WhatsApp</a>
             </li>
             <li className="flex items-center gap-2">
-              <Facebook size={14} className="text-gold" />
+              <Globe size={14} className="text-gold" />
               <a href={BRAND.facebook} target="_blank" rel="noopener" className="hover:text-foreground">Nova Formation Ltd</a>
             </li>
           </ul>
