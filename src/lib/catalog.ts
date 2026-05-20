@@ -823,13 +823,46 @@ export const usaServices: Service[] = [
   {
     slug: "ein-number",
     category: "usa-services",
-    title: "EIN Number Service",
+    title: "Get Your U.S. EIN Number Quickly",
     short: "EIN Number",
-    intro: "Standalone EIN registration with the IRS for new or existing US entities owned by non-residents.",
+    intro:
+      "Apply for your Employer Identification Number (EIN) for your LLC. Official IRS-recognized digital certificate delivered.",
+    whatsIncluded: {
+      title: "Service Features — What's included",
+      items: [
+        "EIN Registration with IRS",
+        "Digital Certificate Delivery (PDF)",
+        "Fast Processing",
+        "Compliant & Secure",
+        "Support included",
+      ],
+    },
+    requirements: {
+      title: "What you'll need to apply",
+      subtitle: "Please prepare the following before starting your EIN Number application. This helps us complete your filing quickly and without delays.",
+      items: [
+        "Registered LLC name & state of formation",
+        "Articles of Organization (PDF)",
+        "Responsible party full name & address",
+        "Passport copy of the responsible party",
+        "Business activity description",
+        "Contact email & WhatsApp number",
+      ],
+    },
+    howItWorks: {
+      title: "Simple 4-step process",
+      steps: [
+        "Submit your details and documents",
+        "We prepare & file Form SS-4 with the IRS",
+        "Receive your official EIN confirmation (CP-575 / 147C)",
+        "Digital PDF certificate delivered to your email",
+      ],
+    },
     packages: [
       {
-        name: "EIN",
-        price: "$30",
+        name: "EIN Number",
+        price: "$50",
+        note: "Service fee · Turnaround 3–10 business days",
         features: [
           "EIN Registration with IRS",
           "Digital Certificate Delivery (PDF)",
@@ -843,13 +876,45 @@ export const usaServices: Service[] = [
   {
     slug: "itin-number",
     category: "usa-services",
-    title: "ITIN Number Service",
+    title: "Obtain Your U.S. ITIN (Individual Taxpayer Identification Number)",
     short: "ITIN Number",
-    intro: "ITIN application assistance for non-US persons who need a US tax identification number.",
+    intro: "Ideal for non-resident members of an LLC or individuals needing a U.S. tax ID.",
+    whatsIncluded: {
+      title: "Service Features — What's included",
+      items: [
+        "ITIN Application Assistance",
+        "IRS-Compliant Submission",
+        "Digital ITIN Certificate",
+        "Fast & Secure Process",
+        "Support Included",
+      ],
+    },
+    requirements: {
+      title: "What you'll need to apply",
+      subtitle: "Please prepare the following before starting your ITIN Number application. This helps us complete your filing quickly and without delays.",
+      items: [
+        "Notarized passport copy (or certified true copy)",
+        "Proof of foreign address",
+        "Reason for ITIN (LLC ownership, U.S. tax filing, etc.)",
+        "LLC formation documents (if applicable)",
+        "Signed Form W-7 (we prepare it for you)",
+        "Contact email & WhatsApp number",
+      ],
+    },
+    howItWorks: {
+      title: "Simple 4-step process",
+      steps: [
+        "Submit your passport & supporting documents",
+        "We prepare and certify your Form W-7 application",
+        "IRS Acceptance Agent submission",
+        "Receive your ITIN letter from the IRS by post & email",
+      ],
+    },
     packages: [
       {
-        name: "ITIN",
-        price: "$199",
+        name: "ITIN Number",
+        price: "$200",
+        note: "Service fee · Turnaround 6–10 weeks (IRS processing)",
         features: [
           "ITIN Application Assistance",
           "IRS-Compliant Submission",
@@ -863,14 +928,45 @@ export const usaServices: Service[] = [
   {
     slug: "annual-tax-filing",
     category: "usa-services",
-    title: "US LLC Annual Tax Return",
-    short: "Annual Tax Filing",
-    intro: "Federal and state tax filings for US LLCs — including Form 5472 for foreign-owned entities.",
+    title: "Annual U.S. LLC Tax Filing Made Simple",
+    short: "US LLC Annual Tax Return",
+    intro: "File your federal & state taxes accurately with professional guidance and portal access.",
+    whatsIncluded: {
+      title: "Service Features — What's included",
+      items: [
+        "Federal & State Tax Submission",
+        "IRS & State Compliant",
+        "Portal Access for Filings",
+        "Support & Guidance",
+        "Ongoing Tax Assistance",
+      ],
+    },
+    requirements: {
+      title: "What you'll need to apply",
+      subtitle: "Please prepare the following before starting your Annual Tax Filing application. This helps us complete your filing quickly and without delays.",
+      items: [
+        "LLC name, EIN & state of formation",
+        "Members / owners details (name, address, ownership %)",
+        "Annual income & expense summary",
+        "Bank statements for the tax year",
+        "Previous year's tax filings (if any)",
+        "Contact email & WhatsApp number",
+      ],
+    },
+    howItWorks: {
+      title: "Simple 4-step process",
+      steps: [
+        "Share your financial summary & documents",
+        "We prepare Form 5472 + 1120 (or relevant returns)",
+        "Review with you before submission",
+        "File with the IRS & deliver confirmation receipt",
+      ],
+    },
     packages: [
       {
         name: "Annual Tax Filing",
-        price: "$99",
-        note: "starting from",
+        price: "$100",
+        note: "Service fee · Turnaround 5–14 business days",
         features: [
           "Federal & State Tax Submission",
           "IRS & State Compliant",
@@ -884,13 +980,45 @@ export const usaServices: Service[] = [
   {
     slug: "bio-report",
     category: "usa-services",
-    title: "BOI Report (Beneficial Ownership)",
-    short: "BOI Report",
-    intro: "Beneficial Ownership Information report submission to FinCEN, with digital confirmation.",
+    title: "File Your U.S. BOI (Beneficial Ownership Information) Report",
+    short: "BOI Report (Beneficial Ownership)",
+    intro: "Comply with U.S. BOI requirements quickly with secure digital processing.",
+    whatsIncluded: {
+      title: "Service Features — What's included",
+      items: [
+        "Digital BOI Report Submission",
+        "U.S. Government Compliant",
+        "Fast Processing",
+        "Secure Document Delivery (PDF)",
+        "Support Included",
+      ],
+    },
+    requirements: {
+      title: "What you'll need to apply",
+      subtitle: "Please prepare the following before starting your BOI Report application. This helps us complete your filing quickly and without delays.",
+      items: [
+        "LLC name, EIN & state of formation",
+        "Beneficial owner(s) full name & date of birth",
+        "Residential address of each beneficial owner",
+        "Passport or government-issued ID copy",
+        "Company applicant details (if formed after 2024)",
+        "Contact email & WhatsApp number",
+      ],
+    },
+    howItWorks: {
+      title: "Simple 4-step process",
+      steps: [
+        "Submit owner details & ID documents",
+        "We prepare your BOI report for FinCEN",
+        "File electronically with FinCEN",
+        "Receive confirmation receipt (PDF) by email",
+      ],
+    },
     packages: [
       {
         name: "BOI Report",
-        price: "$99",
+        price: "$20",
+        note: "Service fee · Turnaround 2–5 business days",
         features: [
           "Digital BOI Report Submission",
           "U.S. Government Compliant",
