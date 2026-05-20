@@ -1032,13 +1032,58 @@ export const usaServices: Service[] = [
 ];
 
 // ============ BANKING & PAYMENTS ============
+const BANK_REQUIREMENTS = [
+  "Company Name",
+  "UK / USA Number",
+  "Email Address",
+  "Residential Home Address",
+  "Residential Bank Statement",
+  "Passport Pictures (holding selfie + picture + live selfie)",
+  "Website",
+  "Business Category",
+];
+
+const BANK_STEPS = [
+  "Share your documents and business details with our team",
+  "We complete and submit your application end-to-end",
+  "We coordinate with the provider for verification & KYC",
+  "Account activated — you're ready to send & receive payments",
+];
+
 const bankCard = (slug: string, title: string, intro: string, price: string, features: string[]): Service => ({
   slug,
   category: "banks-payment-solutions",
   title,
   short: title,
   intro,
-  packages: [{ name: "Account Setup", price, features }],
+  highlights: features,
+  whatsIncluded: {
+    title: `Why choose ${title}`,
+    items: features,
+  },
+  requirements: {
+    title: "What you'll need to apply",
+    subtitle: `Please prepare the following documents and details before starting your ${title} application. This helps us complete your setup quickly and without delays.`,
+    items: BANK_REQUIREMENTS,
+  },
+  howItWorks: {
+    title: "How it works",
+    steps: BANK_STEPS,
+  },
+  packages: [
+    {
+      name: "Account Setup",
+      price,
+      note: `Setup fee ${price} — we handle the application end-to-end and keep you updated.`,
+      features: [
+        ...features,
+        "Fully managed application",
+        "Document review & submission",
+        "Status updates throughout",
+      ],
+      popular: true,
+    },
+  ],
 });
 
 export const banking: Service[] = [
