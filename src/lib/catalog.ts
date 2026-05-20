@@ -441,14 +441,29 @@ export const ukCompliance: Service[] = [
   {
     slug: "company-name-change",
     category: "uk-compliance",
-    title: "Change UK Company Name (NM01)",
-    short: "Company Name Change",
+    title: "Change Your UK Company Name with Confidence",
+    short: "Change UK Company Name (NM01)",
     intro:
-      "Rebrand or restructure your UK company with a fully managed name change filing at Companies House.",
+      "Officially change your UK company name with a fully managed Companies House filing — certificate and resolution document included.",
+    whatsIncluded: {
+      title: "Service Overview — What's included",
+      items: [
+        "Update your registered company name at Companies House",
+        "Certificate of name change included",
+        "Special resolution document drafted for you",
+        "Full compliance with Companies House filing rules",
+      ],
+    },
+    requirements: {
+      title: "What we'll need from you",
+      subtitle: "Please have the following details ready so we can complete your filing quickly with Companies House.",
+      items: ["Company Number (CRN)", "Company Authentication Code", "New Company Name"],
+    },
     packages: [
       {
         name: "Name Change",
         price: "£30",
+        note: "Service Charge",
         features: [
           "Update your registered company name at Companies House",
           "Certificate of name change included",
@@ -461,13 +476,29 @@ export const ukCompliance: Service[] = [
   {
     slug: "company-address-change",
     category: "uk-compliance",
-    title: "Change Registered Office Address (AD01)",
-    short: "Address Change",
-    intro: "Move your registered office address with a quick, compliant Companies House filing.",
+    title: "Update Your Registered UK Office Address",
+    short: "Change Registered Office Address (AD01)",
+    intro:
+      "Update your UK registered office address quickly and stay fully compliant with Companies House.",
+    whatsIncluded: {
+      title: "Service Overview — What's included",
+      items: [
+        "Update your registered office address at Companies House",
+        "Valid for 1 year — includes mail handling options",
+        "Email notifications when post is received",
+        "Optional mail scanning available",
+      ],
+    },
+    requirements: {
+      title: "What we'll need from you",
+      subtitle: "Please have the following details ready so we can complete your filing quickly with Companies House.",
+      items: ["Company Number (CRN)", "Company Authentication Code", "New Registered Address"],
+    },
     packages: [
       {
         name: "Address Change",
         price: "£10",
+        note: "Service Charge",
         features: [
           "Update your registered office address at Companies House",
           "Valid for 1 year — includes mail handling options",
@@ -480,14 +511,33 @@ export const ukCompliance: Service[] = [
   {
     slug: "annual-accounts-filing",
     category: "uk-compliance",
-    title: "File Annual Accounts (UK LTD)",
-    short: "Annual Accounts",
-    intro: "Statutory annual accounts prepared and filed with Companies House and HMRC, on time, every time.",
+    title: "File Your UK Company Annual Accounts On Time",
+    short: "File Annual Accounts (UK LTD)",
+    intro:
+      "Stay compliant with UK statutory filing — full preparation and submission of annual accounts to Companies House and HMRC.",
+    whatsIncluded: {
+      title: "Service Overview — What's included",
+      items: [
+        "Preparation of statutory annual accounts",
+        "Submission to Companies House and HMRC",
+        "Micro-entity, small company and dormant accounts",
+        "Avoid late filing penalties",
+      ],
+    },
+    requirements: {
+      title: "What we'll need from you",
+      subtitle: "Please have the following details ready so we can complete your filing quickly with Companies House.",
+      items: [
+        "Company Number (CRN)",
+        "Company Authentication Code",
+        "Business Financial Statement (income, expenses, budget — full year figures)",
+      ],
+    },
     packages: [
       {
         name: "Annual Accounts",
-        price: "£120",
-        note: "starting from",
+        price: "From £120",
+        note: "Service Charge — starting from",
         features: [
           "Preparation of statutory annual accounts",
           "Submission to Companies House and HMRC",
@@ -500,13 +550,29 @@ export const ukCompliance: Service[] = [
   {
     slug: "confirmation-statement",
     category: "uk-compliance",
-    title: "File Confirmation Statement (CS01)",
-    short: "Confirmation Statement",
-    intro: "Annual confirmation statement filing — keeps your company active and Companies House records up to date.",
+    title: "File Your Annual Confirmation Statement",
+    short: "File Confirmation Statement (CS01)",
+    intro:
+      "Stay compliant with UK company law by filing your annual confirmation statement with Companies House.",
+    whatsIncluded: {
+      title: "Service Overview — What's included",
+      items: [
+        "Prepare your annual confirmation statement",
+        "File with Companies House (£50 fee included)",
+        "Director identity verification details collected",
+        "Avoid strike-off and compliance issues",
+      ],
+    },
+    requirements: {
+      title: "What we'll need from you",
+      subtitle: "Please have the following details ready so we can complete your filing quickly with Companies House.",
+      items: ["Company Number (CRN)", "Company Authentication Code"],
+    },
     packages: [
       {
         name: "Confirmation Statement",
         price: "£80",
+        note: "Service Charge",
         features: [
           "Prepare your annual confirmation statement",
           "File with Companies House (£50 fee included)",
@@ -519,13 +585,29 @@ export const ukCompliance: Service[] = [
   {
     slug: "director-appoint-remove",
     category: "uk-compliance",
-    title: "Appoint or Remove Director",
-    short: "Director Changes",
-    intro: "Add a new director or remove an existing one — Companies House filings handled end-to-end.",
+    title: "Appoint or Remove a Director — Same Day",
+    short: "Appoint or Remove Director",
+    intro:
+      "Appoint or remove UK company directors with a fully managed Companies House filing.",
+    whatsIncluded: {
+      title: "Service Overview — What's included",
+      items: [
+        "Appoint a new company director",
+        "Remove or resign existing directors",
+        "Companies House filing handled end-to-end",
+        "Optional ID verification add-on available",
+      ],
+    },
+    requirements: {
+      title: "What we'll need from you",
+      subtitle: "Please have the following details ready so we can complete your filing quickly with Companies House.",
+      items: ["Company Number (CRN)", "Company Authentication Code", "Director's Personal Code"],
+    },
     packages: [
       {
         name: "Director Appoint / Remove",
         price: "£10",
+        note: "Service Charge",
         features: [
           "Appoint a new company director",
           "Remove or resign existing directors",
@@ -538,13 +620,29 @@ export const ukCompliance: Service[] = [
   {
     slug: "shareholder-appoint-remove",
     category: "uk-compliance",
-    title: "Appoint or Remove Shareholder",
-    short: "Shareholder Changes",
-    intro: "Share transfers, allocations and shareholder updates filed with Companies House.",
+    title: "Update Your UK Company Shareholders Quickly",
+    short: "Appoint or Remove Shareholder",
+    intro:
+      "Easily add or remove shareholders and manage your UK company's ownership structure.",
+    whatsIncluded: {
+      title: "Service Overview — What's included",
+      items: [
+        "Add or remove shareholders",
+        "Companies House updates",
+        "Ownership structure management",
+        "Compliance filing support",
+      ],
+    },
+    requirements: {
+      title: "What we'll need from you",
+      subtitle: "Please have the following details ready so we can complete your filing quickly with Companies House.",
+      items: ["Company Number (CRN)", "Company Authentication Code", "Shareholder's Personal Code"],
+    },
     packages: [
       {
         name: "Shareholder Update",
         price: "£10",
+        note: "Service Charge",
         features: [
           "Add or remove shareholders",
           "Companies House updates",
@@ -557,13 +655,29 @@ export const ukCompliance: Service[] = [
   {
     slug: "psc-secretary-appoint-remove",
     category: "uk-compliance",
-    title: "Appoint or Remove PSC & Secretary",
-    short: "PSC & Secretary",
-    intro: "Add or remove a Person of Significant Control (PSC) or company secretary with Companies House.",
+    title: "Manage PSC & Secretary Changes with Ease",
+    short: "Appoint or Remove PSC & Secretary",
+    intro:
+      "Manage PSC and Company Secretary appointments and removals with full Companies House compliance.",
+    whatsIncluded: {
+      title: "Service Overview — What's included",
+      items: [
+        "Appoint or remove a Person of Significant Control (PSC)",
+        "Appoint or remove a Company Secretary",
+        "Legal compliance updates handled",
+        "Official Companies House filing",
+      ],
+    },
+    requirements: {
+      title: "What we'll need from you",
+      subtitle: "Please have the following details ready so we can complete your filing quickly with Companies House.",
+      items: ["Company Number (CRN)", "Company Authentication Code", "PSC / Secretary Personal Code"],
+    },
     packages: [
       {
         name: "PSC / Secretary Update",
         price: "£10",
+        note: "Service Charge",
         features: [
           "Appoint or remove a Person of Significant Control (PSC)",
           "Appoint or remove a Company Secretary",
@@ -576,13 +690,29 @@ export const ukCompliance: Service[] = [
   {
     slug: "company-residence-change",
     category: "uk-compliance",
-    title: "Change Company Residence Status",
-    short: "Residence Change",
-    intro: "Update the country of residence on your company record at Companies House and HMRC.",
+    title: "Update Your Company Country of Residence",
+    short: "Change Company Residence Status",
+    intro:
+      "Update your UK company's country of residence with full Companies House and HMRC compliance.",
+    whatsIncluded: {
+      title: "Service Overview — What's included",
+      items: [
+        "Change registered country of residence",
+        "Update tax residence details",
+        "Companies House and HMRC notifications",
+        "Full compliance support",
+      ],
+    },
+    requirements: {
+      title: "What we'll need from you",
+      subtitle: "Please have the following details ready so we can complete your filing quickly with Companies House.",
+      items: ["Company Number (CRN)", "Company Authentication Code", "New Country of Residence"],
+    },
     packages: [
       {
         name: "Residence Change",
         price: "£10",
+        note: "Service Charge",
         features: [
           "Change registered country of residence",
           "Update tax residence details",
@@ -595,13 +725,29 @@ export const ukCompliance: Service[] = [
   {
     slug: "ad01-form-post",
     category: "uk-compliance",
-    title: "AD01 Postal Filing Service",
-    short: "AD01 Postal",
-    intro: "Paper AD01 filing where online routes are unavailable — we prepare and post the form for you.",
+    title: "Secure AD01 Address Filing Service",
+    short: "AD01 Postal Filing Service",
+    intro:
+      "Official AD01 filing service to update your UK registered office address with full postal and Companies House handling.",
+    whatsIncluded: {
+      title: "Service Overview — What's included",
+      items: [
+        "Official AD01 filing",
+        "Registered office address update",
+        "Postal handling support",
+        "Companies House submission",
+      ],
+    },
+    requirements: {
+      title: "What we'll need from you",
+      subtitle: "Please have the following details ready so we can complete your filing quickly with Companies House.",
+      items: ["Company Number (CRN)", "Company Authentication Code", "New Registered Address"],
+    },
     packages: [
       {
         name: "AD01 Postal Filing",
         price: "£100",
+        note: "Service Charge",
         features: [
           "Official AD01 filing",
           "Registered office address update",
