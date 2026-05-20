@@ -105,9 +105,8 @@ function Pricing() {
       <Section eyebrow="UK Formation" title="UK Company Formation" services={ukServices.filter((s) => s.slug === "uk-ltd-formation")} />
       <Section eyebrow="UK Address" title="UK Address Services" services={ukServices.filter((s) => s.slug === "registered-office-address")} cols={3} />
       <Section eyebrow="USA Formation" title="USA LLC Formation" services={usaServices.filter((s) => s.slug === "us-llc-formation")} cols={3} />
-      <Section eyebrow="UK Services" title="UK Add-on Services" services={ukServices.filter((s) => !["uk-ltd-formation", "registered-office-address"].includes(s.slug))} cols={3} />
       <Section eyebrow="USA Services" title="USA Add-on Services" services={usaServices.filter((s) => s.slug !== "us-llc-formation")} cols={3} />
-      <Section eyebrow="Compliance" title="UK Compliance Services" services={ukCompliance} cols={3} />
+      <Section eyebrow="UK Compliance" title="UK Compliance Services" services={ukCompliance} cols={3} />
       <Section eyebrow="Banking & Payments" title="Banking & Payment Solutions" services={banking} cols={3} />
       <CTABanner />
     </PageShell>
