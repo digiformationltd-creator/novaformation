@@ -12,30 +12,30 @@ import londonHero from "@/assets/hero-uk-usa.jpg";
 
 
 const ROTATING_HEADLINES = [
-  "Register your UK Limited Company in days.",
-  "Launch your US LLC from anywhere in the world.",
-  "Open a UK business bank account remotely.",
-  "Open a US business bank account remotely.",
-  "Get your Stripe & PayPal account approved.",
-  "Apply for your EIN with the IRS, hassle-free.",
-  "Get your ITIN as a non-resident founder.",
-  "Complete Companies House ID verification.",
-  "Register for UTR & VAT with HMRC.",
-  "Get a prestigious London registered office.",
-  "Appoint your US registered agent in any state.",
-  "File your BOI report on time and stay compliant.",
-  "File your confirmation statement every year.",
-  "File your annual company accounts with HMRC.",
-  "Update directors and shareholders in minutes.",
-  "Open a Wise or Payoneer multi-currency account.",
-  "Open an Airwallex or Tide business account.",
-  "Open a WorldFirst or Sunrate global account.",
-  "Start selling on Amazon in the UK, US & EU.",
-  "Launch your Shopify or eBay store today.",
-  "Build a premium website with SEO included.",
-  "Get custom branding and a professional logo.",
-  "Set up a payment gateway for your store.",
-  "Stay fully compliant as a global founder.",
+  "UK Limited Company in just a few days.",
+  "US LLC from anywhere in the world.",
+  "UK business bank account — fully remote.",
+  "US business bank account — fully remote.",
+  "Stripe & PayPal merchant account, approved.",
+  "EIN with the IRS, hassle-free.",
+  "ITIN as a non-resident founder.",
+  "Companies House ID verification, end-to-end.",
+  "UTR & VAT registration with HMRC.",
+  "prestigious London registered office address.",
+  "US registered agent in any state.",
+  "BOI report filing, on time and compliant.",
+  "annual confirmation statement with Companies House.",
+  "annual company accounts filing with HMRC.",
+  "director & shareholder updates in minutes.",
+  "Wise or Payoneer multi-currency account.",
+  "Airwallex or Tide business account.",
+  "WorldFirst or Sunrate global account.",
+  "Amazon seller account in the UK, US & EU.",
+  "Shopify or eBay store, ready to sell.",
+  "premium website with SEO built in.",
+  "custom brand identity and a professional logo.",
+  "payment gateway integration for your store.",
+  "global business — fully compliant, fully managed.",
 ];
 
 function TypewriterHeadline() {
@@ -166,7 +166,7 @@ function Hero() {
           className="font-bold leading-[1.15]"
         >
           <span className="block text-2xl sm:text-4xl lg:text-5xl text-silver-gradient mb-5">
-            Launch your business —
+            Launch your
           </span>
           <span className="block text-xl sm:text-3xl lg:text-4xl font-semibold">
             <TypewriterHeadline />
