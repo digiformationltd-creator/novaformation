@@ -191,12 +191,14 @@ function Hero() {
             Start Your Company
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </a>
-          <Link
-            to="/contact"
+          <a
+            href={`${BRAND.whatsapp}?text=${encodeURIComponent(`Hello ${BRAND.short}, I'd like a free consultation.`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-silver/30 text-foreground hover:bg-card transition-colors"
           >
             Book Free Consultation
-          </Link>
+          </a>
         </motion.div>
       </motion.div>
     </section>
@@ -398,11 +400,11 @@ function CTA() {
           Book a free 30-minute consultation. Our formation experts will map the fastest, fully-compliant path to launch your UK LTD or US LLC.
         </p>
         <div className="relative mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-          <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gold-gradient text-primary-foreground font-semibold shadow-gold hover:scale-[1.04] transition-transform">
+          <a href={`${BRAND.whatsapp}?text=${encodeURIComponent(`Hello ${BRAND.short}, I'd like a free consultation.`)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gold-gradient text-primary-foreground font-semibold shadow-gold hover:scale-[1.04] transition-transform">
             Book Free Consultation <ArrowRight size={16} />
-          </Link>
-          <a href={BRAND.whatsapp} target="_blank" rel="noopener" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-silver/30 hover:bg-card transition-colors">
-            WhatsApp Us
+          </a>
+          <a href={`tel:${BRAND.phoneIntl}`} className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-silver/30 hover:bg-card transition-colors">
+            Call {BRAND.phone}
           </a>
         </div>
       </motion.div>

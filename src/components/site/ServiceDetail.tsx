@@ -222,9 +222,9 @@ export function ServiceDetail({ service }: { service: Service }) {
           </div>
 
           <div className="mt-10 text-center">
-            <Link to="/contact" className="text-sm text-gold hover:underline">
-              Have a custom requirement? Contact us →
-            </Link>
+            <a href={waLink} target="_blank" rel="noopener noreferrer" className="text-sm text-gold hover:underline">
+              Have a custom requirement? Chat on WhatsApp →
+            </a>
           </div>
         </div>
       </section>
