@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
+import { CheckCircle2, ArrowRight, Sparkles, UserCheck, FileText } from "lucide-react";
 import { PageShell, PageHero, CTABanner } from "@/components/site/PageParts";
 import { BRAND } from "@/lib/brand";
 import type { Service } from "@/lib/catalog";
@@ -33,6 +33,124 @@ export function ServiceDetail({ service }: { service: Service }) {
                 <span>{h}</span>
               </motion.div>
             ))}
+          </div>
+        </section>
+      )}
+
+      {service.whoNeedsIt && (
+        <section className="px-4 sm:px-6 py-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-8">
+              <div className="text-xs uppercase tracking-[0.3em] text-gold mb-2">Who Needs It</div>
+              <h2 className="text-3xl sm:text-4xl font-bold">{service.whoNeedsIt.title}</h2>
+              {service.whoNeedsIt.subtitle && (
+                <p className="text-muted-foreground mt-3 max-w-3xl mx-auto">{service.whoNeedsIt.subtitle}</p>
+              )}
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {service.whoNeedsIt.roles.map((r, i) => (
+                <motion.div
+                  key={r.name}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.06 }}
+                  className="rounded-2xl border border-silver/15 bg-card/60 p-5 hover:border-gold/40 transition-colors"
+                >
+                  <UserCheck size={20} className="text-gold mb-3" />
+                  <h3 className="font-semibold">{r.name}</h3>
+                  {r.desc && <p className="text-sm text-muted-foreground mt-1">{r.desc}</p>}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {service.whatsIncluded && (
+        <section className="px-4 sm:px-6 py-12">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-8">
+              <div className="text-xs uppercase tracking-[0.3em] text-gold mb-2">What's Included</div>
+              <h2 className="text-3xl sm:text-4xl font-bold">{service.whatsIncluded.title}</h2>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {service.whatsIncluded.items.map((it, i) => (
+                <motion.div
+                  key={it}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="flex items-start gap-2 rounded-xl border border-silver/15 bg-card/40 px-4 py-3 text-sm"
+                >
+                  <CheckCircle2 size={16} className="text-gold shrink-0 mt-0.5" />
+                  <span>{it}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {service.requirements && (
+        <section className="px-4 sm:px-6 py-12">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-8">
+              <div className="text-xs uppercase tracking-[0.3em] text-gold mb-2">Requirements</div>
+              <h2 className="text-3xl sm:text-4xl font-bold">{service.requirements.title ?? "What you'll need"}</h2>
+              {service.requirements.subtitle && (
+                <p className="text-muted-foreground mt-3 max-w-3xl mx-auto">{service.requirements.subtitle}</p>
+              )}
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {service.requirements.items.map((it, i) => (
+                <motion.div
+                  key={it}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="flex items-start gap-3 rounded-xl border border-silver/15 bg-card/40 px-4 py-4"
+                >
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold-gradient text-primary-foreground text-sm font-bold">
+                    {i + 1}
+                  </span>
+                  <span className="text-sm font-medium pt-1">{it}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {service.howItWorks && (
+        <section className="px-4 sm:px-6 py-12">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-8">
+              <div className="text-xs uppercase tracking-[0.3em] text-gold mb-2">Process</div>
+              <h2 className="text-3xl sm:text-4xl font-bold">{service.howItWorks.title ?? "How it works"}</h2>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {service.howItWorks.steps.map((step, i) => (
+                <motion.div
+                  key={step}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.07 }}
+                  className="relative rounded-2xl border border-silver/15 bg-card/60 p-5"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold-gradient text-primary-foreground text-sm font-bold">
+                      {i + 1}
+                    </span>
+                    <FileText size={16} className="text-gold" />
+                  </div>
+                  <p className="text-sm">{step}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
       )}
