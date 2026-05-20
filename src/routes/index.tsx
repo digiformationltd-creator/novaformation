@@ -12,55 +12,68 @@ import londonHero from "@/assets/hero-london.jpg";
 
 
 const ROTATING_HEADLINES = [
-  "Register Your UK Limited Company",
-  "Launch Your US LLC Remotely",
-  "Open a UK Business Bank Account",
-  "Open a US Business Bank Account",
-  "Get Your Stripe & PayPal Account",
-  "Apply for Your EIN with the IRS",
-  "Get Your ITIN as a Non-Resident",
-  "Complete Companies House ID Verification",
-  "Register for UTR & VAT with HMRC",
-  "Get a London Registered Office Address",
-  "Appoint Your US Registered Agent",
-  "File Your BOI Report on Time",
-  "File Your Annual Confirmation Statement",
-  "File Your Annual Company Accounts",
-  "Update Directors & Shareholders Easily",
-  "Open a Wise or Payoneer Account",
-  "Open an Airwallex or Tide Account",
-  "Open a WorldFirst or Sunrate Account",
-  "Start Selling on Amazon Globally",
-  "Launch Your Shopify or eBay Store",
-  "Build a Premium Website with SEO",
-  "Get Custom Branding & Logo Design",
-  "Set Up a Payment Gateway for Your Store",
-  "Stay Fully Compliant as a Global Founder",
+  "Register your UK Limited Company in days.",
+  "Launch your US LLC from anywhere in the world.",
+  "Open a UK business bank account remotely.",
+  "Open a US business bank account remotely.",
+  "Get your Stripe & PayPal account approved.",
+  "Apply for your EIN with the IRS, hassle-free.",
+  "Get your ITIN as a non-resident founder.",
+  "Complete Companies House ID verification.",
+  "Register for UTR & VAT with HMRC.",
+  "Get a prestigious London registered office.",
+  "Appoint your US registered agent in any state.",
+  "File your BOI report on time and stay compliant.",
+  "File your confirmation statement every year.",
+  "File your annual company accounts with HMRC.",
+  "Update directors and shareholders in minutes.",
+  "Open a Wise or Payoneer multi-currency account.",
+  "Open an Airwallex or Tide business account.",
+  "Open a WorldFirst or Sunrate global account.",
+  "Start selling on Amazon in the UK, US & EU.",
+  "Launch your Shopify or eBay store today.",
+  "Build a premium website with SEO included.",
+  "Get custom branding and a professional logo.",
+  "Set up a payment gateway for your store.",
+  "Stay fully compliant as a global founder.",
 ];
 
-function RotatingHeadline() {
+function TypewriterHeadline() {
   const [i, setI] = useState(0);
+  const [text, setText] = useState("");
+  const [phase, setPhase] = useState<"typing" | "pausing" | "deleting">("typing");
+
   useEffect(() => {
-    const id = setInterval(() => setI((p) => (p + 1) % ROTATING_HEADLINES.length), 2600);
-    return () => clearInterval(id);
-  }, []);
+    const full = ROTATING_HEADLINES[i];
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (phase === "typing") {
+      if (text.length < full.length) {
+        timeout = setTimeout(() => setText(full.slice(0, text.length + 1)), 45);
+      } else {
+        timeout = setTimeout(() => setPhase("pausing"), 1800);
+      }
+    } else if (phase === "pausing") {
+      timeout = setTimeout(() => setPhase("deleting"), 200);
+    } else {
+      if (text.length > 0) {
+        timeout = setTimeout(() => setText(full.slice(0, text.length - 1)), 20);
+      } else {
+        setI((p) => (p + 1) % ROTATING_HEADLINES.length);
+        setPhase("typing");
+      }
+    }
+    return () => clearTimeout(timeout);
+  }, [text, phase, i]);
+
   return (
-    <span className="block relative h-[2.6em] sm:h-[1.3em] overflow-hidden">
-      <AnimatePresence mode="wait">
-        <motion.span
-          key={i}
-          initial={{ y: "100%", opacity: 0, filter: "blur(8px)" }}
-          animate={{ y: "0%", opacity: 1, filter: "blur(0px)" }}
-          exit={{ y: "-100%", opacity: 0, filter: "blur(8px)" }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="block text-gold-gradient gold-shimmer leading-tight px-2"
-        >
-          {ROTATING_HEADLINES[i]}
-        </motion.span>
-      </AnimatePresence>
+    <span className="block text-gold-gradient gold-shimmer leading-tight px-2 min-h-[2.6em] sm:min-h-[1.3em]">
+      {text}
+      <span className="inline-block w-[2px] sm:w-[3px] h-[0.9em] -mb-[0.1em] ml-1 bg-gold align-middle animate-pulse" />
     </span>
   );
 }
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
