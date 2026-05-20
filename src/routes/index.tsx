@@ -3,9 +3,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import {
   Building2, ShieldCheck, Landmark, Globe2, Code2, FileCheck2,
-  ArrowRight, Sparkles, CheckCircle2, Star,
+  ArrowRight, Sparkles, Star,
 } from "lucide-react";
 import { SiteShell } from "@/components/site/SiteShell";
+import { JurisdictionSelector } from "@/components/site/JurisdictionSelector";
 import { BRAND } from "@/lib/brand";
 import londonHero from "@/assets/hero-london.jpg";
 import logo from "@/assets/nova-logo.png";
@@ -199,73 +200,11 @@ function Services() {
   );
 }
 
-const packageFeatures = [
-  "UK LTD (Company) Registration",
-  "Companies House Incorporation Fee Included",
-  "Registered Office Address",
-  "Company Authentication Code",
-  "Company UTR Number",
-  "Digital Company Incorporation Certificate",
-  "Digital Memorandum & Articles of Association",
-  "Digital Shares Certificate",
-  "Includes ID Verification",
-  "Printed Certificate of Incorporation",
-];
-
 function Packages() {
   return (
-    <section className="py-24 px-4 sm:px-6 bg-card/30 border-y border-border/50">
-      <div className="max-w-5xl mx-auto">
-        <SectionHeader
-          eyebrow="Featured Package"
-          title={<><em className="text-silver-gradient not-italic">Silver</em> LTD Formation Package</>}
-        />
-
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="mt-14 relative rounded-3xl gold-border p-8 sm:p-12 shadow-elegant"
-        >
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full bg-silver-gradient text-primary-foreground text-xs font-bold tracking-widest">
-            MOST POPULAR
-          </div>
-
-          <div className="text-center mb-10">
-            <div className="text-sm uppercase tracking-widest text-gold-gradient mb-2">UK Company · Nova Formation Ltd</div>
-            <div className="text-5xl sm:text-6xl font-bold text-gold-gradient">{BRAND.startingPrice}</div>
-            <div className="text-sm text-muted-foreground mt-2">Complete LTD formation with everything included</div>
-          </div>
-
-          <ul className="grid sm:grid-cols-2 gap-3">
-            {packageFeatures.map((f, i) => (
-              <motion.li
-                key={f}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.04 }}
-                className="flex items-center gap-3 p-3 rounded-lg bg-background/50 border border-border/40"
-              >
-                <CheckCircle2 size={18} className="text-gold flex-shrink-0" />
-                <span className="text-sm">{f}</span>
-              </motion.li>
-            ))}
-          </ul>
-
-          <div className="mt-10 text-center">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gold-gradient text-primary-foreground font-semibold shadow-gold hover:scale-[1.04] transition-transform"
-            >
-              Get the Silver Package
-              <ArrowRight size={16} />
-            </Link>
-          </div>
-        </motion.div>
-      </div>
-    </section>
+    <div id="quick-start">
+      <JurisdictionSelector />
+    </div>
   );
 }
 
