@@ -160,11 +160,11 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-bold leading-[1.15]"
         >
-          <span className="block text-3xl sm:text-5xl lg:text-6xl text-silver-gradient mb-3">
-            We Help You
+          <span className="block text-3xl sm:text-5xl lg:text-6xl text-silver-gradient mb-4">
+            Your Global Business,
           </span>
-          <span className="block text-2xl sm:text-4xl lg:text-5xl">
-            <RotatingHeadline />
+          <span className="block text-xl sm:text-3xl lg:text-4xl font-semibold">
+            <TypewriterHeadline />
           </span>
           <span className="block text-sm sm:text-lg mt-6 font-normal text-muted-foreground max-w-2xl mx-auto">
             Your trusted partner for company formation, banking, compliance and growth across the{" "}
