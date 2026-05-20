@@ -8,7 +8,7 @@ import {
 import { SiteShell } from "@/components/site/SiteShell";
 import { JurisdictionSelector } from "@/components/site/JurisdictionSelector";
 import { BRAND } from "@/lib/brand";
-import londonHero from "@/assets/hero-london.jpg";
+import londonHero from "@/assets/hero-uk-usa.jpg";
 
 
 const ROTATING_HEADLINES = [
@@ -116,8 +116,13 @@ function Hero() {
   return (
     <section ref={ref} className="relative min-h-[100svh] overflow-hidden flex items-center justify-center grain">
       <motion.div style={{ scale, y: y1 }} className="absolute inset-0">
-        <img src={londonHero} alt="London skyline" className="w-full h-full object-cover opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
+        <img
+          src={londonHero}
+          alt="London and New York skylines — UK & USA company formation"
+          className="w-full h-full object-cover opacity-70 blur-[3px] scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/55 to-background" />
+        <div className="absolute inset-0 bg-background/20" />
       </motion.div>
 
       <div className="absolute inset-0 hero-glow pointer-events-none" />
@@ -161,7 +166,7 @@ function Hero() {
           className="font-bold leading-[1.15]"
         >
           <span className="block text-2xl sm:text-4xl lg:text-5xl text-silver-gradient mb-5">
-            With Nova Formation, you can
+            Launch your business —
           </span>
           <span className="block text-xl sm:text-3xl lg:text-4xl font-semibold">
             <TypewriterHeadline />
