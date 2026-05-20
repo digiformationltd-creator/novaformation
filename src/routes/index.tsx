@@ -12,40 +12,40 @@ import londonHero from "@/assets/hero-london.jpg";
 
 
 const ROTATING_HEADLINES = [
-  "UK Limited Company",
-  "US LLC",
-  "UK Business Bank Account",
-  "US Business Bank Account",
-  "Stripe & PayPal Account",
-  "EIN for Your US LLC",
-  "ITIN for Non-Residents",
-  "Companies House ID Verification",
-  "UTR & VAT Registration",
-  "Registered Office Address",
-  "US Registered Agent",
-  "BOI Report Filing",
-  "Confirmation Statement",
-  "Annual Accounts Filing",
-  "Director & Shareholder Updates",
-  "Wise & Payoneer Account",
-  "Airwallex & Tide Account",
-  "WorldFirst & Sunrate Account",
-  "Amazon Seller Account",
-  "Shopify & eBay Store",
-  "Premium Website & SEO",
-  "Branding & Logo Design",
-  "Payment Gateway Setup",
-  "Global Founder Compliance",
+  "Register Your UK Limited Company",
+  "Launch Your US LLC Remotely",
+  "Open a UK Business Bank Account",
+  "Open a US Business Bank Account",
+  "Get Your Stripe & PayPal Account",
+  "Apply for Your EIN with the IRS",
+  "Get Your ITIN as a Non-Resident",
+  "Complete Companies House ID Verification",
+  "Register for UTR & VAT with HMRC",
+  "Get a London Registered Office Address",
+  "Appoint Your US Registered Agent",
+  "File Your BOI Report on Time",
+  "File Your Annual Confirmation Statement",
+  "File Your Annual Company Accounts",
+  "Update Directors & Shareholders Easily",
+  "Open a Wise or Payoneer Account",
+  "Open an Airwallex or Tide Account",
+  "Open a WorldFirst or Sunrate Account",
+  "Start Selling on Amazon Globally",
+  "Launch Your Shopify or eBay Store",
+  "Build a Premium Website with SEO",
+  "Get Custom Branding & Logo Design",
+  "Set Up a Payment Gateway for Your Store",
+  "Stay Fully Compliant as a Global Founder",
 ];
 
 function RotatingHeadline() {
   const [i, setI] = useState(0);
   useEffect(() => {
-    const id = setInterval(() => setI((p) => (p + 1) % ROTATING_HEADLINES.length), 2200);
+    const id = setInterval(() => setI((p) => (p + 1) % ROTATING_HEADLINES.length), 2600);
     return () => clearInterval(id);
   }, []);
   return (
-    <span className="block relative h-[1.15em] overflow-hidden">
+    <span className="block relative h-[2.6em] sm:h-[1.3em] overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.span
           key={i}
@@ -53,7 +53,7 @@ function RotatingHeadline() {
           animate={{ y: "0%", opacity: 1, filter: "blur(0px)" }}
           exit={{ y: "-100%", opacity: 0, filter: "blur(8px)" }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="block text-gold-gradient gold-shimmer"
+          className="block text-gold-gradient gold-shimmer leading-tight px-2"
         >
           {ROTATING_HEADLINES[i]}
         </motion.span>
@@ -145,13 +145,17 @@ function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.1]"
+          className="font-bold leading-[1.15]"
         >
-          <span className="block text-silver-gradient">Set Up Your</span>
-          <RotatingHeadline />
-          <span className="block text-base sm:text-xl mt-5 font-normal text-muted-foreground max-w-2xl mx-auto">
-            One trusted partner for company formation, banking, compliance and growth — across the{" "}
-            <span className="text-gold-gradient font-semibold">UK, USA</span> and beyond, with{" "}
+          <span className="block text-3xl sm:text-5xl lg:text-6xl text-silver-gradient mb-3">
+            We Help You
+          </span>
+          <span className="block text-2xl sm:text-4xl lg:text-5xl">
+            <RotatingHeadline />
+          </span>
+          <span className="block text-sm sm:text-lg mt-6 font-normal text-muted-foreground max-w-2xl mx-auto">
+            Your trusted partner for company formation, banking, compliance and growth across the{" "}
+            <span className="text-gold-gradient font-semibold">UK, USA</span> and beyond — with{" "}
             <span className="text-gold-gradient font-semibold">Nova Formation Ltd</span>.
           </span>
         </motion.h1>
