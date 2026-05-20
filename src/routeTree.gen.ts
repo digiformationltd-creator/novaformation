@@ -24,6 +24,7 @@ import { Route as UsaServicesSlugRouteImport } from './routes/usa-services.$slug
 import { Route as UkServicesSlugRouteImport } from './routes/uk-services.$slug'
 import { Route as UkComplianceSlugRouteImport } from './routes/uk-compliance.$slug'
 import { Route as BanksPaymentSolutionsSlugRouteImport } from './routes/banks-payment-solutions.$slug'
+import { Route as UsaServicesUsLlcFormationChooseStateRouteImport } from './routes/usa-services.us-llc-formation.choose-state'
 
 const WebDevelopmentRoute = WebDevelopmentRouteImport.update({
   id: '/web-development',
@@ -102,6 +103,12 @@ const BanksPaymentSolutionsSlugRoute =
     path: '/banks-payment-solutions/$slug',
     getParentRoute: () => rootRouteImport,
   } as any)
+const UsaServicesUsLlcFormationChooseStateRoute =
+  UsaServicesUsLlcFormationChooseStateRouteImport.update({
+    id: '/usa-services/us-llc-formation/choose-state',
+    path: '/usa-services/us-llc-formation/choose-state',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -119,6 +126,7 @@ export interface FileRoutesByFullPath {
   '/uk-compliance/': typeof UkComplianceIndexRoute
   '/uk-services/': typeof UkServicesIndexRoute
   '/usa-services/': typeof UsaServicesIndexRoute
+  '/usa-services/us-llc-formation/choose-state': typeof UsaServicesUsLlcFormationChooseStateRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -136,6 +144,7 @@ export interface FileRoutesByTo {
   '/uk-compliance': typeof UkComplianceIndexRoute
   '/uk-services': typeof UkServicesIndexRoute
   '/usa-services': typeof UsaServicesIndexRoute
+  '/usa-services/us-llc-formation/choose-state': typeof UsaServicesUsLlcFormationChooseStateRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -154,6 +163,7 @@ export interface FileRoutesById {
   '/uk-compliance/': typeof UkComplianceIndexRoute
   '/uk-services/': typeof UkServicesIndexRoute
   '/usa-services/': typeof UsaServicesIndexRoute
+  '/usa-services/us-llc-formation/choose-state': typeof UsaServicesUsLlcFormationChooseStateRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -173,6 +183,7 @@ export interface FileRouteTypes {
     | '/uk-compliance/'
     | '/uk-services/'
     | '/usa-services/'
+    | '/usa-services/us-llc-formation/choose-state'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -190,6 +201,7 @@ export interface FileRouteTypes {
     | '/uk-compliance'
     | '/uk-services'
     | '/usa-services'
+    | '/usa-services/us-llc-formation/choose-state'
   id:
     | '__root__'
     | '/'
@@ -207,6 +219,7 @@ export interface FileRouteTypes {
     | '/uk-compliance/'
     | '/uk-services/'
     | '/usa-services/'
+    | '/usa-services/us-llc-formation/choose-state'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -225,6 +238,7 @@ export interface RootRouteChildren {
   UkComplianceIndexRoute: typeof UkComplianceIndexRoute
   UkServicesIndexRoute: typeof UkServicesIndexRoute
   UsaServicesIndexRoute: typeof UsaServicesIndexRoute
+  UsaServicesUsLlcFormationChooseStateRoute: typeof UsaServicesUsLlcFormationChooseStateRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -334,6 +348,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BanksPaymentSolutionsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/usa-services/us-llc-formation/choose-state': {
+      id: '/usa-services/us-llc-formation/choose-state'
+      path: '/usa-services/us-llc-formation/choose-state'
+      fullPath: '/usa-services/us-llc-formation/choose-state'
+      preLoaderRoute: typeof UsaServicesUsLlcFormationChooseStateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -353,6 +374,8 @@ const rootRouteChildren: RootRouteChildren = {
   UkComplianceIndexRoute: UkComplianceIndexRoute,
   UkServicesIndexRoute: UkServicesIndexRoute,
   UsaServicesIndexRoute: UsaServicesIndexRoute,
+  UsaServicesUsLlcFormationChooseStateRoute:
+    UsaServicesUsLlcFormationChooseStateRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
