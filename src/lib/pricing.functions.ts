@@ -20,7 +20,7 @@ export const getJurisdictionPricing = createServerFn({ method: "POST" })
     const list = data.region === "UK" ? UK_JURISDICTIONS : US_STATES;
     const jurisdiction = list.find((j) => j.code === data.code);
     if (!jurisdiction) {
-      return { error: "Invalid jurisdiction", packages: [], jurisdiction: null as const };
+      return { error: "Invalid jurisdiction", packages: [], jurisdiction: null };
     }
 
     const source =
@@ -29,7 +29,7 @@ export const getJurisdictionPricing = createServerFn({ method: "POST" })
         : usaServices.find((s) => s.slug === "us-llc-formation");
 
     if (!source) {
-      return { error: "Service not found", packages: [], jurisdiction: null as const };
+      return { error: "Service not found", packages: [], jurisdiction: null };
     }
 
     const packages = source.packages.map((p) => {
