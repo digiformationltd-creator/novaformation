@@ -32,12 +32,14 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Link
-            to="/contact"
+          <a
+            href={`${BRAND.whatsapp}?text=${encodeURIComponent(`Hello ${BRAND.short}, I'd like to get started.`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gold-gradient text-primary-foreground font-medium text-sm shadow-gold hover:scale-[1.03] transition-transform"
           >
             Get Started
-          </Link>
+          </a>
         </div>
 
         <button
@@ -62,13 +64,15 @@ export function Header() {
                 {n.label}
               </Link>
             ))}
-            <Link
-              to="/contact"
+            <a
+              href={`${BRAND.whatsapp}?text=${encodeURIComponent(`Hello ${BRAND.short}, I'd like to get started.`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="mt-4 text-center px-5 py-3 rounded-full bg-gold-gradient text-primary-foreground font-medium text-sm"
             >
               Get Started
-            </Link>
+            </a>
           </div>
         </div>
       )}

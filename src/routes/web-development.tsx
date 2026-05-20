@@ -146,11 +146,11 @@ function WebDev() {
 
       <section className="px-4 sm:px-6 -mt-6 pb-6">
         <div className="max-w-3xl mx-auto flex flex-col sm:flex-row gap-3 justify-center">
-          <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-gold-gradient text-primary-foreground font-semibold shadow-gold">
+          <a href={wa} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-gold-gradient text-primary-foreground font-semibold shadow-gold">
             Request a Free Quote <ArrowRight size={16} />
-          </Link>
-          <a href={wa} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full border border-silver/30 hover:border-gold/50">
-            Chat on WhatsApp
+          </a>
+          <a href={`tel:${BRAND.phoneIntl}`} className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full border border-silver/30 hover:border-gold/50">
+            Call {BRAND.phone}
           </a>
         </div>
       </section>
