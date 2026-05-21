@@ -323,16 +323,29 @@ function WhyUs() {
   );
 }
 
-const partners = ["Companies House", "HMRC", "IRS", "PayPal", "Stripe", "Wise", "WorldFirst", "Airwallex", "Tide", "Sunrate", "Shopify", "eBay"];
+const highlights = [
+  "72 Hours Complete Registration",
+  "300+ Companies Registered",
+  "24/7 Global Founder Support",
+  "Fully Remote — No Travel Needed",
+  "Companies House Approved",
+  "HMRC Compliant Filings",
+  "98% Client Retention Rate",
+  "Transparent Pricing — No Hidden Fees",
+  "Personal Account Manager",
+  "Fast Business Bank Setup",
+  "100% Online Process",
+  "Zero Hassle Guaranteed",
+];
 
 function Partners() {
   return (
     <section className="py-20 px-4 sm:px-6 border-y border-border/50 bg-card/30 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader eyebrow="Trusted Network" title={<>Trusted Partners & <em className="text-gold-gradient not-italic">Official Integrations</em></>} />
+        <SectionHeader eyebrow="Our Commitment" title={<>Trusted Speed & <em className="text-gold-gradient not-italic">Reliability</em></>} />
         <div className="mt-12 relative">
           <div className="flex gap-6 animate-[scroll_30s_linear_infinite]">
-            {[...partners, ...partners].map((p, i) => (
+            {[...highlights, ...highlights].map((p, i) => (
               <div key={i} className="flex-shrink-0 px-8 py-5 rounded-xl gold-border whitespace-nowrap text-silver-gradient font-medium">
                 {p}
               </div>
